@@ -8862,12 +8862,25 @@ h1, h2, h3, h4, h5,
     color: #ffbd39; }
   .services-1:hover {
     background: #ffbd39; }
+    .services-1:hover p{
+      color: #000000; }
     .services-1:hover .icon i {
       color: #fff; }
     .services-1:hover h3 {
       color: #000000; }
       .services-1:hover h3:after {
         background: #000000; }
+
+.divider {
+  border: none; /* Elimina el borde por defecto de <hr> */
+  height: 1px; /* Grosor de la línea */
+  background-color: #ccc; /* Color sutil, puedes cambiarlo */
+  margin: 10px auto; /* Espaciado */
+  width: 80%; /* Haz la línea más corta que el texto */
+  opacity: 0.5; /* Da un efecto tenue */
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
 
 .progress-wrap {
   width: 100%;
