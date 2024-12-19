@@ -8815,6 +8815,13 @@ h1, h2, h3, h4, h5,
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase; }
+    .resume-wrap:hover {
+        background: #ffbd39;
+        color: #000000;
+    }
+    .resume-wrap:hover .date{
+        color: #fff
+    }
 
 .services-1 {
   margin-bottom: 40px;
