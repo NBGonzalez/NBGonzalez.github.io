@@ -4,24 +4,14 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    // !! WARN !!
     ignoreBuildErrors: true,
   },
   images: { unoptimized: true },
-  devIndicators: false,
-  allowedDevOrigins: [
-    "*.macaly.dev",
-    "*.macaly.app",
-    "*.macaly-app.com",
-    "*.macaly-user-data.dev",
-  ],
   output: 'export',
+  // No devIndicators ni allowedDevOrigins para evitar errores
+  // assetPrefix y basePath vacíos para evitar error con next/font
   basePath: '',
-  assetPrefix: './',
-
+  assetPrefix: '',
 };
 
 module.exports = nextConfig;
