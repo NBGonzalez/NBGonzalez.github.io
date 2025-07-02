@@ -19,6 +19,8 @@ const nextConfig = {
     "*.macaly-user-data.dev",
   ],
   output: 'export',
+  basePath: '',
+  assetPrefix: './',
 
 };
 
