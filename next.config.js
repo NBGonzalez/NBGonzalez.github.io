@@ -8,10 +8,9 @@ const nextConfig = {
   },
   images: { unoptimized: true },
   output: 'export',
-  // No devIndicators ni allowedDevOrigins para evitar errores
-  // assetPrefix y basePath vacíos para evitar error con next/font
-  basePath: '',
-  assetPrefix: '',
+  // Configura esto con el nombre de tu repositorio
+  basePath: process.env.NODE_ENV === 'production' ? '/NBGonzalez.github.io' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/NBGonzalez.github.io/' : '',
 };
 
 module.exports = nextConfig;
