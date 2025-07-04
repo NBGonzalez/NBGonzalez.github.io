@@ -10,57 +10,61 @@ export default function CVEducation() {
 
   const education = [
     {
-      degree: "Bachelor's in Game Design & Development",
+      degree: "Bachelor's in Videogame Development & Design",
       institution: "Universidad Rey Juan Carlos",
       location: "Madrid, Spain",
-      period: "2022 - Present",
+      period: "2021 - Present",
       status: "Current",
       description: "Comprehensive program covering game design principles, programming, 3D modeling, animation, and project management. Focus on both technical implementation and creative design processes.",
       courses: [
         "Game Programming",
+        "Multiplayers Environments",
         "3D Graphics & Animation", 
+        "Algorithms",
         "Game Design Theory",
         "AI for Games",
         "UI/UX Design",
-        "Project Management"
+        "Project Management",
+        "VR/AR Fundamentals"
       ],
-      gpa: "8.5/10"
+      gpa: "7.39/10"
     },
     {
-      degree: "High School Diploma - Technology Track",
-      institution: "Instituto Tecnológico",
+      degree: "Advanced Vocational Training - 3D Animation, Games & Interactive Environments",
+      institution: "Universidad Europea",
       location: "Madrid, Spain", 
-      period: "2020 - 2022",
+      period: "2018 - 2020",
       status: "Completed",
-      description: "Specialized in technology and computer science with focus on programming fundamentals and digital design.",
+      description: "Specialized program focusing on digital content creation for games and interactive media. Developed comprehensive skills across the 3D production pipeline and digital art tools.",
       courses: [
-        "Programming Fundamentals",
+        "3D Modeling",
         "Digital Design",
-        "Mathematics",
-        "Physics",
-        "Technical Drawing"
+        "Texturing & Materials",
+        "Game Development Basics",
+        "2D & 3D Animations",
+        "Digital Content Creation"
       ],
-      gpa: "9.2/10"
+      gpa: "8.67/10"
     }
   ];
 
   const certifications = [
     {
-      title: "Unity Certified Programmer",
+      title: "Unity Certified",
       issuer: "Unity Technologies",
       year: "2024",
       status: "In Progress"
     },
     {
-      title: "Game Development Fundamentals",
-      issuer: "Coursera",
-      year: "2023",
+      title: "Competitive Programming Certificate",
+      issuer: "Isaac Lozano Osorio",
+      year: "2025",
       status: "Completed"
     },
     {
-      title: "3D Modeling with Blender",
-      issuer: "Udemy",
-      year: "2023", 
+      title: "Game Development & VR with Unity Certification",
+      issuer: "Centro de Formación Municipal de Móstoles",
+      year: "2021", 
       status: "Completed"
     }
   ];

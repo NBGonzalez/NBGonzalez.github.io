@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function CVHero() {
   console.log("CVHero component rendering");
@@ -58,7 +59,7 @@ export default function CVHero() {
             transition={{ duration: 1, delay: 0.2 }}
           >
             <span className="bg-gradient-to-r from-electric-purple via-neon-cyan to-gaming-green bg-clip-text text-transparent animate-glow-pulse">
-              Tu Nombre
+              Néstor Bermejillo
             </span>
           </motion.h1>
 
@@ -69,7 +70,7 @@ export default function CVHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Game Design & Development Student
+            Game Development & Programmer
           </motion.p>
 
           <motion.p 
@@ -78,7 +79,7 @@ export default function CVHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Universidad Rey Juan Carlos • Madrid
+            Spain • Madrid
           </motion.p>
 
           {/* Social links */}
@@ -88,6 +89,11 @@ export default function CVHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
+            <a
+            href="https://github.com/NBGonzalez"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
             <Button 
               variant="outline" 
               size="lg" 
@@ -97,7 +103,13 @@ export default function CVHero() {
               <Github className="w-5 h-5 mr-2" />
               GitHub
             </Button>
+            </a>
             
+            <a
+            href="https://www.linkedin.com/in/nestor-bermejillo-gonzalez-101b53182/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
             <Button 
               variant="outline" 
               size="lg" 
@@ -107,7 +119,9 @@ export default function CVHero() {
               <Linkedin className="w-5 h-5 mr-2" />
               LinkedIn
             </Button>
+            </a>
             
+            <a href="mailto:nestorbermejillogonzalez@gmail.com">
             <Button 
               variant="outline" 
               size="lg" 
@@ -117,6 +131,7 @@ export default function CVHero() {
               <Mail className="w-5 h-5 mr-2" />
               Contact
             </Button>
+            </a>
           </motion.div>
         </motion.div>
 
@@ -126,7 +141,7 @@ export default function CVHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
-          onClick={() => scrollToSection('about')}
+          onClick={() => scrollToSection('education')}
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}

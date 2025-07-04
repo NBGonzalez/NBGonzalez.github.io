@@ -1,9 +1,25 @@
-// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '', // Vacío para repositorio usuario.github.io
-  assetPrefix: '', // Vacío para repositorio usuario.github.io
-  trailingSlash: true, // Recomendado para GitHub Pages
-  // El resto de tu configuración actual...
+  trailingSlash: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
+  images: { unoptimized: true },
+  devIndicators: false,
+  allowedDevOrigins: [
+    "*.macaly.dev",
+    "*.macaly.app",
+    "*.macaly-app.com",
+    "*.macaly-user-data.dev",
+  ],
 };
+
+module.exports = nextConfig;

@@ -37,14 +37,14 @@ export default function CVContact() {
     {
       icon: Mail,
       label: "Email",
-      value: "tu.email@ejemplo.com",
-      link: "mailto:tu.email@ejemplo.com"
+      value: "nestorbermejillogonzalez@gmail.com",
+      link: "mailto:nestorbermejillogonzalez@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+34 XXX XXX XXX",
-      link: "tel:+34XXXXXXXXX"
+      value: "+34 658 912 253",
+      link: "tel:+34658912253"
     },
     {
       icon: MapPin,
@@ -58,13 +58,13 @@ export default function CVContact() {
     {
       icon: Github,
       label: "GitHub",
-      url: "#",
+      url: "https://github.com/NBGonzalez",
       color: "text-gray-400 hover:text-white"
     },
     {
       icon: Linkedin,
       label: "LinkedIn", 
-      url: "#",
+      url: "https://www.linkedin.com/in/nestor-bermejillo-gonzalez-101b53182/",
       color: "text-blue-400 hover:text-blue-300"
     },
     {
@@ -153,6 +153,7 @@ export default function CVContact() {
                     <motion.a
                       key={social.label}
                       href={social.url}
+                      target="_blank"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}

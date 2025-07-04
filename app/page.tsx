@@ -12,10 +12,10 @@ export default function Home() {
       <FloatingNav />
       <main className="min-h-screen bg-black text-white">
         <CVHero />
-        <CVAbout />
+        <CVEducation />
         <CVSkills />
         <CVProjects />
-        <CVEducation />
+        <CVAbout />
         <CVContact />
       </main>
     </>
