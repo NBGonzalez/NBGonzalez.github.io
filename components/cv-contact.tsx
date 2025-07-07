@@ -237,7 +237,7 @@ export default function CVContact() {
           className="text-center mt-16 pt-8 border-t border-gray-800"
         >
           <p className="text-gray-400">
-            © 2024 Tu Nombre. Built with passion for game development.
+            © 2025 Néstor Bermejillo González. Built with passion for game development.
           </p>
         </motion.div>
       </div>

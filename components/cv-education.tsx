@@ -50,9 +50,9 @@ export default function CVEducation() {
 
   const certifications = [
     {
-      title: "Unity Certified",
-      issuer: "Unity Technologies",
-      year: "2024",
+      title: "Substance Painter & Designer",
+      issuer: "Udemy",
+      year: "2025",
       status: "In Progress"
     },
     {
