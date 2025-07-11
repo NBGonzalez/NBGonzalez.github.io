@@ -41,11 +41,12 @@ export default function FloatingNav() {
 
   const navItems = [
     { id: "hero", icon: Home, label: "Home" },
-    { id: "about", icon: User, label: "About" },
+    { id: "education", icon: GraduationCap, label: "Education" },
     { id: "skills", icon: Code, label: "Skills" },
     { id: "projects", icon: Folder, label: "Projects" },
-    { id: "education", icon: GraduationCap, label: "Education" },
-    { id: "contact", icon: Mail, label: "Contact" }
+    { id: "contact", icon: Mail, label: "Contact" },
+    //{ id: "about", icon: User, label: "About" }
+
   ];
 
   const scrollToSection = (sectionId: string) => {

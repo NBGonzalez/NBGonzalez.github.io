@@ -11,39 +11,48 @@ export default function CVProjects() {
 
   const projects = [
     {
-      title: "Fantasy RPG Adventure",
-      description: "A 3D action RPG featuring dynamic combat system, character progression, and immersive storytelling. Built with Unity and C#.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Unity", "C#", "Blender", "Photoshop"],
-      githubUrl: "#",
-      liveUrl: "#",
+      title: "Fragments Of Time",
+      description: "The main character seeks to find the killer who murdered his daughter. To do so, he created a machine that allows him to travel to the moment of her death.",
+      image: "/images/FragmentsOfTime.png",
+      technologies: ["Unity", "C#", "Blender", "Photoshop", "Substance Painter"],
+      githubUrl: "https://github.com/NBGonzalez/Jam2025?tab=readme-ov-file",
+      liveUrl: "https://criis-0924.itch.io/fragments-of-time",
       status: "In Development"
     },
     {
-      title: "Puzzle Platformer",
-      description: "2D puzzle-platformer with innovative mechanics and beautiful pixel art. Features 30+ levels and engaging soundtrack.",
-      image: "/api/placeholder/400/250", 
-      technologies: ["Unity", "C#", "Aseprite", "FMOD"],
-      githubUrl: "#",
-      liveUrl: "#",
+      title: "FallOff",
+      description: "A 3D action RPG featuring dynamic combat system, character progression, and immersive storytelling. Built with Unity and C#.",
+      image: "/images/FallOff.jpeg",
+      technologies: ["Unity", "C#", "UnityCloud", "UnityAuthentication","Photoshop"],
+      githubUrl: "https://github.com/NBGonzalez/Jam2025?tab=readme-ov-file",
+      liveUrl: "https://criis-0924.itch.io/fragments-of-time",
       status: "Completed"
     },
     {
-      title: "VR Experience Demo",
-      description: "Immersive VR experience showcasing interactive environments and intuitive gesture controls for educational purposes.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Unity", "C#", "Oculus SDK", "3ds Max"],
-      githubUrl: "#",
-      liveUrl: "#",
+      title: "The Shop Next Door",
+      description: "The Shop Next Door is a two player competitive game where two sisters will have to fight to find a good balance between life and work.",
+      image: "/images/TheShopNextDoor.jpg",
+      technologies: ["Unity", "C#", "Network For GameObjects", "Blender", "Substance Painter"],
+      githubUrl: "https://github.com/Kioreco/The-Shop-Next-Door",
+      liveUrl: "https://kioreco.itch.io/the-shop-next-door",
+      status: "Completed"
+    },
+    {
+      title: "Decor Dilema",
+      description: "Immersive VR experience showcasing interactive environments that you can decorate according to customer orders.",
+      image: "/images/DecorDilema.png",
+      technologies: ["Unity", "C#", "Oculus Rift", "Blender"],
+      githubUrl: "https://github.com/uapli/RV-DECOR-DILEMMA",
+      liveUrl: "https://pablowht.itch.io/decor-dilemma",
       status: "Prototype"
     },
     {
-      title: "Mobile Racing Game",
-      description: "Fast-paced mobile racing game with customizable vehicles, multiple tracks, and multiplayer support.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Unity", "C#", "Firebase", "Google Play"],
-      githubUrl: "#",
-      liveUrl: "#",
+      title: "Arkanoid",
+      description: "The classic Arkanoid video game, in which the difficulty is increasing as blocks are breaking. Created completely in JavaScript.",
+      image: "/images/Arkanoid.png",
+      technologies: ["Visual Code", "HTML", "CSS", "JavaScript"],
+      githubUrl: "https://github.com/NBGonzalez/Arkanoid",
+      liveUrl: "https://nbgonzalez.github.io/Arkanoid/",
       status: "Published"
     }
   ];
@@ -61,7 +70,7 @@ export default function CVProjects() {
   return (
     <section id="projects" className="py-20 bg-gradient-to-b from-space-blue to-dark-slate relative">
       <div className="absolute inset-0 bg-hexagon-pattern opacity-5"></div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -75,7 +84,7 @@ export default function CVProjects() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-gaming-green to-electric-purple mx-auto mb-8"></div>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            A showcase of my game development projects, from concept to completion. 
+            A showcase of my game development projects, from concept to completion.
             Each project represents a unique challenge and learning experience.
           </p>
         </motion.div>
@@ -94,17 +103,23 @@ export default function CVProjects() {
               >
                 <Card className="bg-black/50 border-gray-700 hover:border-electric-purple/50 transition-all duration-300 overflow-hidden h-full">
                   {/* Project Image */}
-                  <div className="relative overflow-hidden bg-gradient-to-br from-electric-purple/20 to-neon-cyan/20 h-48">
-                    <div className="absolute inset-0 bg-gaming-gradient opacity-20"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Play className="w-16 h-16 text-white/60" />
+                  <div className="relative h-56 w-full overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-black/30" />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Play className="w-12 h-12 text-white/70" />
                     </div>
-                    <div className="absolute top-4 right-4">
+                    <div className="absolute top-4 right-4 z-10">
                       <Badge className={`${getStatusColor(project.status)} font-medium`}>
                         {project.status}
                       </Badge>
                     </div>
                   </div>
+
 
                   <CardHeader>
                     <CardTitle className="text-xl text-white group-hover:text-neon-cyan transition-colors">
@@ -120,9 +135,9 @@ export default function CVProjects() {
                     {/* Technologies */}
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
-                        <Badge 
+                        <Badge
                           key={tech}
-                          variant="outline" 
+                          variant="outline"
                           className="text-xs border-gray-600 text-gray-400"
                         >
                           {tech}
@@ -132,25 +147,38 @@ export default function CVProjects() {
 
                     {/* Action buttons */}
                     <div className="flex space-x-3 pt-2">
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        className="border-electric-purple text-electric-purple hover:bg-electric-purple hover:text-white transition-all duration-300 flex-1"
-                        onClick={() => console.log("GitHub clicked for:", project.title)}
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1"
                       >
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </Button>
-                      
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black transition-all duration-300 flex-1"
-                        onClick={() => console.log("Live demo clicked for:", project.title)}
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="w-full border-electric-purple text-electric-purple hover:bg-electric-purple hover:text-white transition-all duration-300"
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </Button>
+                      </a>
+
+
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1"
                       >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Demo
-                      </Button>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="w-full border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black transition-all duration-300"
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Demo
+                        </Button>
+                      </a>
                     </div>
                   </CardContent>
                 </Card>

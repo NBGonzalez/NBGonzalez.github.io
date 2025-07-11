@@ -14,8 +14,8 @@ export default function Home() {
         <CVHero />
         <CVEducation />
         <CVSkills />
-        {/*<CVProjects />
-        <CVAbout />*/}
+        <CVProjects />
+        {/*<CVAbout />*/}
         <CVContact />
       </main>
     </>
