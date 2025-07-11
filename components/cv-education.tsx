@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 
 import { motion } from "framer-motion";
 import { GraduationCap, Calendar, MapPin, Award } from "lucide-react";
@@ -7,6 +8,8 @@ import { Badge } from "@/components/ui/badge";
 
 export default function CVEducation() {
   console.log("CVEducation component rendering");
+
+const [selectedCert, setSelectedCert] = useState<string | null>(null);
 
   const education = [
     {
@@ -53,19 +56,22 @@ export default function CVEducation() {
       title: "Substance Painter & Designer",
       issuer: "Udemy",
       year: "2025",
-      status: "In Progress"
+      status: "In Progress",
+      file: ""
     },
     {
       title: "Competitive Programming Certificate",
       issuer: "Isaac Lozano Osorio",
       year: "2025",
-      status: "Completed"
+      status: "Completed",
+      file: "competitive-programming-certificate.pdf"
     },
     {
       title: "Game Development & VR with Unity Certification",
       issuer: "Centro de Formación Municipal de Móstoles",
       year: "2021", 
-      status: "Completed"
+      status: "Completed",
+      file: "DESARROLLODEVIDEOJUEGOSYREALIADVIRTUALCONUNITY3D.pdf"
     }
   ];
 
@@ -192,6 +198,8 @@ export default function CVEducation() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
+                  onClick={() => setSelectedCert(cert.file)}
+                  className="cursor-pointer"
                 >
                   <Card className="bg-black/50 border-gray-700 hover:border-neon-cyan/50 transition-all duration-300 h-full">
                     <CardContent className="p-6 text-center">
@@ -222,6 +230,24 @@ export default function CVEducation() {
           </motion.div>
         </div>
       </div>
+      {selectedCert && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
+    <div className="relative w-full max-w-4xl h-[90vh] bg-gray-900 rounded-xl shadow-lg overflow-hidden">
+      <button
+        className="absolute top-2 right-2 text-white bg-red-500 hover:bg-red-600 px-3 py-1 rounded"
+        onClick={() => setSelectedCert(null)}
+      >
+        Close
+      </button>
+      <iframe
+        src={`/Certificates/${selectedCert}`}
+        title="Certificate Viewer"
+        className="w-full h-full"
+      />
+    </div>
+  </div>
+)}
+
     </section>
   );
 }

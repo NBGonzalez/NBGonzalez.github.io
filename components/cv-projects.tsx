@@ -11,21 +11,21 @@ export default function CVProjects() {
 
   const projects = [
     {
-      title: "Fragments Of Time",
+      title: "Fragments Of Time (Game Jam)",
       description: "The main character seeks to find the killer who murdered his daughter. To do so, he created a machine that allows him to travel to the moment of her death.",
       image: "/images/FragmentsOfTime.png",
       technologies: ["Unity", "C#", "Blender", "Photoshop", "Substance Painter"],
       githubUrl: "https://github.com/NBGonzalez/Jam2025?tab=readme-ov-file",
       liveUrl: "https://criis-0924.itch.io/fragments-of-time",
-      status: "In Development"
+      status: "Completed"
     },
     {
       title: "FallOff",
-      description: "A 3D action RPG featuring dynamic combat system, character progression, and immersive storytelling. Built with Unity and C#.",
+      description: "FallOff is a mobile game where you dodge obstacles to achieve the highest score possible. Built with Unity Cloud and Unity Authentication.",
       image: "/images/FallOff.jpeg",
       technologies: ["Unity", "C#", "UnityCloud", "UnityAuthentication","Photoshop"],
-      githubUrl: "https://github.com/NBGonzalez/Jam2025?tab=readme-ov-file",
-      liveUrl: "https://criis-0924.itch.io/fragments-of-time",
+      githubUrl: "https://github.com/Chavid72/Aplicaciones",
+      liveUrl: "https://github.com/Chavid72/Aplicaciones/blob/main/app-release.apk",
       status: "Completed"
     },
     {
@@ -110,9 +110,7 @@ export default function CVProjects() {
                       className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/30" />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Play className="w-12 h-12 text-white/70" />
-                    </div>
+                    
                     <div className="absolute top-4 right-4 z-10">
                       <Badge className={`${getStatusColor(project.status)} font-medium`}>
                         {project.status}

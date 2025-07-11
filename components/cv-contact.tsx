@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from "lucide-react";
+import { FaItchIo } from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -68,10 +69,10 @@ export default function CVContact() {
       color: "text-blue-400 hover:text-blue-300"
     },
     {
-      icon: Twitter,
-      label: "Twitter",
-      url: "#",
-      color: "text-sky-400 hover:text-sky-300"
+      icon: FaItchIo,
+      label: "Itch.io",
+      url: "https://itch.io/profile/nbgonzalez",
+      color: "text-pink-500 hover:text-pink-400"
     }
   ];
 
