@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   SiJavascript,
-  SiCsharp,
   SiPython,
   SiUnity,
   SiAutodeskmaya,
@@ -18,18 +17,20 @@ import {
   SiCplusplus,
   SiUnrealengine
 } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
 
-import { DiVisualstudio,
-  DiJava
- } from "react-icons/di";
+
+import { DiVisualstudio, DiJava} from "react-icons/di";
+import { useTranslation } from "react-i18next";
 
 export default function CVSkills() {
   console.log("CVSkills component rendering");
+  const { t } = useTranslation();
 
   const technicalSkills = [
     { name: "Unity", icon: SiUnity, color: "#000000" },
     { name: 'Unreal Engine', icon: SiUnrealengine, color: '#0E1128' },
-    { name: "C#", icon: SiCsharp, color: "#239120" },
+    { name: "C#", icon: TbBrandCSharp, color: "#ffffffff" },
     { name: "C++", icon: SiCplusplus, color: "#00599C" },
     { name: 'SQLite', icon: SiSqlite, color: '#003B57' },
     { name: 'SQL', icon: SiMysql, color: '#4479A1' },
@@ -46,23 +47,23 @@ export default function CVSkills() {
   ];
 
   const gameDevSkills = [
-    "Game Design",
-    "Level Design",
-    "UI/UX Design",
-    "3D Modeling",
-    "Textures",
-    "Shader Programming",
-    "Programming Patterns",
-    "AI Programming",
-    "Database",
-    "Multiplayer Systems",
-    "Performance Optimization"
+     t("skills.gamedevSkills.gameDesign"),
+    t("skills.gamedevSkills.levelDesign"),
+    t("skills.gamedevSkills.uiux"),
+    t("skills.gamedevSkills.modeling"),
+    t("skills.gamedevSkills.textures"),
+    t("skills.gamedevSkills.shader"),
+    t("skills.gamedevSkills.patterns"),
+    t("skills.gamedevSkills.ai"),
+    t("skills.gamedevSkills.database"),
+    t("skills.gamedevSkills.multiplayer"),
+    t("skills.gamedevSkills.performance")
   ];
 
   const SkillCard = ({ skill }: { skill: { name: string; icon: any; color: string } }) => (
   <Card className="bg-space-blue/30 border-electric-purple/20 hover:border-electric-purple/50 transition-all duration-300">
     <CardContent className="p-5 flex flex-col items-center justify-center gap-4">
-      {/* Icon Container (como el de educación) */}
+      {/* Icon */}
       <div className="w-16 h-16 bg-gradient-to-br from-electric-purple to-neon-cyan rounded-lg flex items-center justify-center shadow-md">
         {skill.icon ? (
           <skill.icon className="w-8 h-8 text-white" style={{ color: skill.color }} />
@@ -95,7 +96,8 @@ export default function CVSkills() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Technical <span className="text-neon-cyan">Skills</span>
+            {t("skills.title.part1")}{" "}
+            <span className="text-neon-cyan">{t("skills.title.part2")}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-neon-cyan to-gaming-green mx-auto mb-8"></div>
         </motion.div>
@@ -110,7 +112,7 @@ export default function CVSkills() {
             className="mb-16"
           >
             <h3 className="text-2xl font-bold text-white mb-8 text-center">
-              Programming & Development
+              {t("skills.technical")}
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
               {technicalSkills.map((skill, index) => (
@@ -136,7 +138,7 @@ export default function CVSkills() {
             className="mb-16"
           >
             <h3 className="text-2xl font-bold text-white mb-8 text-center">
-              Game Development Expertise
+              {t("skills.gamedev")}
             </h3>
             <div className="flex flex-wrap justify-center gap-3">
               {gameDevSkills.map((skill, index) => (

@@ -2,6 +2,7 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  //staticPageGenerationTimeout: 300,
   eslint: {
     ignoreDuringBuilds: true,
   },

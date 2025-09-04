@@ -1,0 +1,176 @@
+{
+  "name": "Néstor Bermejillo",
+  "role": "Desarrollador de Videojuegos y Programador",
+  "location": "España • Madrid",
+  "scrollDown": "Desplázate hacia abajo",
+  "contact": "Contacto",
+  "github": "GitHub",
+  "linkedin": "LinkedIn",
+
+  "ui": {
+    "close": "Cerrar"
+  },
+
+                                                          "_coment": "CV-Education",
+
+  "education": {
+    "title": {
+      "part1": "Educación &",
+      "part2": "Aprendizaje"
+    },
+    "current": "En curso",
+    "completed": "Completado",
+    "keyCourses": "Asignaturas destacadas",
+    "gpa": "Nota media",
+    "certifications": "Certificaciones y Cursos",
+    "degrees": [
+      {
+        "degree": "Grado en Desarrollo y Diseño de Videojuegos",
+        "institution": "Universidad Rey Juan Carlos",
+        "location": "Madrid, España",
+        "period": "2021 - Actualidad",
+        "status": "En curso",
+        "description": "Programa integral sobre principios de diseño de videojuegos, programación, modelado 3D, animación y gestión de proyectos. Con un enfoque en implementación técnica y diseño creativo.",
+        "courses": [
+          "Programación de Videojuegos",
+          "Entornos Multijugador",
+          "Gráficos 3D y Animación",
+          "Patrones de Programación",
+          "Bases de Datos",
+          "Algoritmos",
+          "Teoría del Diseño de Videojuegos",
+          "IA para Videojuegos",
+          "Diseño UI/UX",
+          "Gestión de Proyectos",
+          "Fundamentos de VR/AR"
+        ],
+        "gpa": "7.39/10"
+      },
+      {
+        "degree": "Formación Profesional Superior - Animación 3D, Juegos y Entornos Interactivos",
+        "institution": "Universidad Europea",
+        "location": "Madrid, España",
+        "period": "2018 - 2020",
+        "status": "Completado",
+        "description": "Programa especializado en creación de contenido digital para videojuegos y medios interactivos. Desarrollo de habilidades en el pipeline de producción 3D y herramientas de arte digital.",
+        "courses": [
+          "Modelado 3D",
+          "Diseño Digital",
+          "Texturizado y Materiales",
+          "Fundamentos de Desarrollo de Videojuegos",
+          "Animaciones 2D y 3D",
+          "Creación de Contenido Digital"
+        ],
+        "gpa": "8.67/10"
+      }
+    ],
+    "certificationsList": [
+      {
+        "title": "Substance Painter & Designer",
+        "issuer": "Udemy",
+        "year": "2025",
+        "status": "En curso",
+        "file": ""
+      },
+      {
+        "title": "Certificado de Programación Competitiva",
+        "issuer": "Isaac Lozano Osorio",
+        "year": "2025",
+        "status": "Completado",
+        "file": "competitive-programming-certificate.pdf"
+      },
+      {
+        "title": "Certificación en Desarrollo de Videojuegos y VR con Unity",
+        "issuer": "Centro de Formación Municipal de Móstoles",
+        "year": "2021",
+        "status": "Completado",
+        "file": "DESARROLLODEVIDEOJUEGOSYREALIADVIRTUALCONUNITY3D.pdf"
+      }
+    ]
+  },
+
+                                                          "_coment2": "CV-Skills",
+
+  "skills": {
+    "title": {
+      "part1": "Habilidades",
+      "part2": "Técnicas"
+    },
+    "technical": "Programación y Desarrollo",
+    "gamedev": "Experiencia en Desarrollo de Videojuegos",
+
+    "gamedevSkills": {
+      "gameDesign": "Diseño de Juegos",
+      "levelDesign": "Diseño de Niveles",
+      "uiux": "Diseño UI/UX",
+      "modeling": "Modelado 3D",
+      "textures": "Texturizado",
+      "shader": "Programación de Shaders",
+      "patterns": "Patrones de Programación",
+      "ai": "Programación de IA",
+      "database": "Bases de Datos",
+      "multiplayer": "Sistemas Multijugador",
+      "performance": "Optimización de Rendimiento"
+    }
+  },
+
+                                                          "_coment3": "CV-Projects",
+
+  "projects": {
+    "title": "Mis",
+    "highlight": "Proyectos",
+    "subtitle": "Una muestra de mis proyectos de desarrollo de videojuegos, desde la idea hasta la finalización. Cada proyecto representa un reto y una experiencia de aprendizaje única.",
+    "buttons": {
+      "code": "Código",
+      "demo": "Demo"
+    },
+    "status": {
+      "Completed": "Completado",
+      "Published": "Publicado",
+      "In Development": "En Desarrollo",
+      "Prototype": "Prototipo"
+    },
+    "items": {
+      "fragmentsOfTime": {
+        "title": "Fragments Of Time (Game Jam)",
+        "description": "El protagonista busca al asesino de su hija. Para ello, crea una máquina que le permite viajar al momento de su muerte."
+      },
+      "fallOff": {
+        "title": "FallOff",
+        "description": "Juego móvil donde esquivas obstáculos para lograr la máxima puntuación posible. Creado con Unity Cloud y Unity Authentication."
+      },
+      "theShopNextDoor": {
+        "title": "The Shop Next Door",
+        "description": "Juego competitivo para dos jugadores en el que dos hermanas luchan por encontrar un equilibrio entre la vida y el trabajo."
+      },
+      "decorDilema": {
+        "title": "Decor Dilema",
+        "description": "Experiencia VR inmersiva que muestra entornos interactivos que puedes decorar según los pedidos de los clientes."
+      },
+      "arkanoid": {
+        "title": "Arkanoid",
+        "description": "El clásico videojuego Arkanoid con dificultad creciente a medida que rompes bloques. Creado completamente en JavaScript."
+      }
+    }
+  },
+
+                                                          "_coment4": "CV-Contact",
+
+  "CVcontact": {
+    "title": {
+      "part1": "Ponte en ",
+      "part2": "Contacto"
+    },
+    "subtitle": "¿Listo para colaborar en tu próximo proyecto de videojuegos? ¡Conectemos y creemos algo increíble juntos!",
+    "infoTitle": "Información de Contacto",
+    "socialTitle": "Sígueme",
+    "formTitle": "Enviar un Mensaje",
+    "form": {
+      "name": "Tu Nombre",
+      "email": "Tu Correo",
+      "message": "Tu Mensaje",
+      "send": "Enviar Mensaje"
+    },
+    "footer": "© 2025 Néstor Bermejillo González. Hecho con pasión por el desarrollo de videojuegos."
+  }
+}

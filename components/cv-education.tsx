@@ -1,79 +1,52 @@
 "use client";
+
+import "@/lib/i18n";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { motion } from "framer-motion";
 import { GraduationCap, Calendar, MapPin, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
+type EducationItem = {
+  degree: string;
+  institution: string;
+  location: string;
+  period: string;
+  status: string;
+  description: string;
+  courses: string[];
+  gpa: string;
+};
+
+type CertificationItem = {
+  title: string;
+  issuer: string;
+  year: string;
+  status: string;
+  file: string;
+};
+
 export default function CVEducation() {
   console.log("CVEducation component rendering");
+  const { t } = useTranslation();
+  const [selectedCert, setSelectedCert] = useState<string | null>(null);
 
-const [selectedCert, setSelectedCert] = useState<string | null>(null);
+  // Datos desde los JSON de i18n (con fallback a [])
+  const education = (t("education.degrees", {
+    returnObjects: true,
+    defaultValue: [],
+  }) as EducationItem[]) ?? [];
 
-  const education = [
-    {
-      degree: "Bachelor's in Videogame Development & Design",
-      institution: "Universidad Rey Juan Carlos",
-      location: "Madrid, Spain",
-      period: "2021 - Present",
-      status: "Current",
-      description: "Comprehensive program covering game design principles, programming, 3D modeling, animation, and project management. Focus on both technical implementation and creative design processes.",
-      courses: [
-        "Game Programming",
-        "Multiplayers Environments",
-        "3D Graphics & Animation", 
-        "Algorithms",
-        "Game Design Theory",
-        "AI for Games",
-        "UI/UX Design",
-        "Project Management",
-        "VR/AR Fundamentals"
-      ],
-      gpa: "7.39/10"
-    },
-    {
-      degree: "Advanced Vocational Training - 3D Animation, Games & Interactive Environments",
-      institution: "Universidad Europea",
-      location: "Madrid, Spain", 
-      period: "2018 - 2020",
-      status: "Completed",
-      description: "Specialized program focusing on digital content creation for games and interactive media. Developed comprehensive skills across the 3D production pipeline and digital art tools.",
-      courses: [
-        "3D Modeling",
-        "Digital Design",
-        "Texturing & Materials",
-        "Game Development Basics",
-        "2D & 3D Animations",
-        "Digital Content Creation"
-      ],
-      gpa: "8.67/10"
-    }
-  ];
+  const certifications = (t("education.certificationsList", {
+    returnObjects: true,
+    defaultValue: [],
+  }) as CertificationItem[]) ?? [];
 
-  const certifications = [
-    {
-      title: "Substance Painter & Designer",
-      issuer: "Udemy",
-      year: "2025",
-      status: "In Progress",
-      file: ""
-    },
-    {
-      title: "Competitive Programming Certificate",
-      issuer: "Isaac Lozano Osorio",
-      year: "2025",
-      status: "Completed",
-      file: "competitive-programming-certificate.pdf"
-    },
-    {
-      title: "Game Development & VR with Unity Certification",
-      issuer: "Centro de Formación Municipal de Móstoles",
-      year: "2021", 
-      status: "Completed",
-      file: "DESARROLLODEVIDEOJUEGOSYREALIADVIRTUALCONUNITY3D.pdf"
-    }
-  ];
+  // Utilidades para pintar estados en ambos idiomas
+  const isCurrent = (status: string) => /current|curso/i.test(status);
+  const isCompleted = (status: string) => /completed|completado/i.test(status);
 
   return (
     <section id="education" className="py-20 bg-gradient-to-b from-dark-slate to-black relative">
@@ -88,7 +61,8 @@ const [selectedCert, setSelectedCert] = useState<string | null>(null);
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Education & <span className="text-electric-purple">Learning</span>
+            {t("education.title.part1")}{" "}
+            <span className="text-electric-purple">{t("education.title.part2")}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-electric-purple to-gaming-green mx-auto mb-8"></div>
         </motion.div>
@@ -98,7 +72,7 @@ const [selectedCert, setSelectedCert] = useState<string | null>(null);
           <div className="space-y-8 mb-16">
             {education.map((edu, index) => (
               <motion.div
-                key={edu.degree}
+                key={`${edu.degree}-${index}`}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -121,11 +95,7 @@ const [selectedCert, setSelectedCert] = useState<string | null>(null);
                             {edu.degree}
                           </h3>
                           <Badge 
-                            className={`${
-                              edu.status === 'Current' 
-                                ? 'bg-gaming-green text-black' 
-                                : 'bg-neon-cyan text-black'
-                            } w-fit`}
+                            className={`${isCurrent(edu.status) ? "bg-gaming-green text-black" : "bg-neon-cyan text-black"} w-fit`}
                           >
                             {edu.status}
                           </Badge>
@@ -152,11 +122,13 @@ const [selectedCert, setSelectedCert] = useState<string | null>(null);
 
                         <div className="flex flex-col md:flex-row gap-4">
                           <div className="flex-1">
-                            <h4 className="text-sm font-semibold text-white mb-2">Key Courses:</h4>
+                            <h4 className="text-sm font-semibold text-white mb-2">
+                              {t("education.keyCourses")}
+                            </h4>
                             <div className="flex flex-wrap gap-2">
-                              {edu.courses.map((course) => (
+                              {edu.courses.map((course, i) => (
                                 <Badge 
-                                  key={course}
+                                  key={`${course}-${i}`}
                                   variant="outline" 
                                   className="text-xs border-gray-600 text-gray-400"
                                 >
@@ -168,7 +140,9 @@ const [selectedCert, setSelectedCert] = useState<string | null>(null);
                           
                           <div className="flex items-center">
                             <Award className="w-4 h-4 mr-2 text-gaming-green" />
-                            <span className="text-gaming-green font-semibold">GPA: {edu.gpa}</span>
+                            <span className="text-gaming-green font-semibold">
+                              {t("education.gpa")}: {edu.gpa}
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -187,12 +161,12 @@ const [selectedCert, setSelectedCert] = useState<string | null>(null);
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-8 text-center">
-              Certifications & Courses
+              {t("education.certifications")}
             </h3>
             <div className="grid md:grid-cols-3 gap-6">
               {certifications.map((cert, index) => (
                 <motion.div
-                  key={cert.title}
+                  key={`${cert.title}-${index}`}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -213,11 +187,7 @@ const [selectedCert, setSelectedCert] = useState<string | null>(null);
                       <div className="flex justify-between items-center">
                         <span className="text-gray-500 text-xs">{cert.year}</span>
                         <Badge 
-                          className={`${
-                            cert.status === 'Completed' 
-                              ? 'bg-gaming-green text-black' 
-                              : 'bg-electric-purple text-white'
-                          } text-xs`}
+                          className={`${isCompleted(cert.status) ? "bg-gaming-green text-black" : "bg-electric-purple text-white"} text-xs`}
                         >
                           {cert.status}
                         </Badge>
@@ -230,24 +200,25 @@ const [selectedCert, setSelectedCert] = useState<string | null>(null);
           </motion.div>
         </div>
       </div>
-      {selectedCert && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
-    <div className="relative w-full max-w-4xl h-[90vh] bg-gray-900 rounded-xl shadow-lg overflow-hidden">
-      <button
-        className="absolute top-2 right-2 text-white bg-red-500 hover:bg-red-600 px-3 py-1 rounded"
-        onClick={() => setSelectedCert(null)}
-      >
-        Close
-      </button>
-      <iframe
-        src={`/Certificates/${selectedCert}`}
-        title="Certificate Viewer"
-        className="w-full h-full"
-      />
-    </div>
-  </div>
-)}
 
+      {/* Modal visor de certificados */}
+      {selectedCert && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
+          <div className="relative w-full max-w-4xl h-[90vh] bg-gray-900 rounded-xl shadow-lg overflow-hidden">
+            <button
+              className="absolute top-2 right-2 text-white bg-red-500 hover:bg-red-600 px-3 py-1 rounded"
+              onClick={() => setSelectedCert(null)}
+            >
+              {t("ui.close")}
+            </button>
+            <iframe
+              src={`/Certificates/${selectedCert}`}
+              title="Certificate Viewer"
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

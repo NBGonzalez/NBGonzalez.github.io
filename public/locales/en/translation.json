@@ -1,0 +1,176 @@
+{
+  "name": "Néstor Bermejillo",
+  "role": "Game Developer & Programmer",
+  "location": "Spain • Madrid",
+  "scrollDown": "Scroll Down",
+  "contact": "Contact",
+  "github": "GitHub",
+  "linkedin": "LinkedIn",
+
+  "ui": {
+    "close": "Close"
+  },
+
+                                                          "_coment": "CV-Education",
+
+  "education": {
+    "title": {
+      "part1": "Education &",
+      "part2": "Learning"
+    },
+    "current": "Current",
+    "completed": "Completed",
+    "keyCourses": "Key Courses",
+    "gpa": "GPA",
+    "certifications": "Certifications & Courses",
+    "degrees": [
+      {
+        "degree": "Bachelor's in Videogame Development & Design",
+        "institution": "Universidad Rey Juan Carlos",
+        "location": "Madrid, Spain",
+        "period": "2021 - Present",
+        "status": "Current",
+        "description": "Comprehensive program covering game design principles, programming, 3D modeling, animation, and project management. Focus on both technical implementation and creative design processes.",
+        "courses": [
+          "Game Programming",
+          "Multiplayers Environments",
+          "3D Graphics & Animation",
+          "Programming Patterns",
+          "Databases",
+          "Algorithms",
+          "Game Design Theory",
+          "AI for Games",
+          "UI/UX Design",
+          "Project Management",
+          "VR/AR Fundamentals"
+        ],
+        "gpa": "7.39/10"
+      },
+      {
+        "degree": "Advanced Vocational Training - 3D Animation, Games & Interactive Environments",
+        "institution": "Universidad Europea",
+        "location": "Madrid, Spain",
+        "period": "2018 - 2020",
+        "status": "Completed",
+        "description": "Specialized program focusing on digital content creation for games and interactive media. Developed comprehensive skills across the 3D production pipeline and digital art tools.",
+        "courses": [
+          "3D Modeling",
+          "Digital Design",
+          "Texturing & Materials",
+          "Game Development Basics",
+          "2D & 3D Animations",
+          "Digital Content Creation"
+        ],
+        "gpa": "8.67/10"
+      }
+    ],
+    "certificationsList": [
+      {
+        "title": "Substance Painter & Designer",
+        "issuer": "Udemy",
+        "year": "2025",
+        "status": "In Progress",
+        "file": ""
+      },
+      {
+        "title": "Competitive Programming Certificate",
+        "issuer": "Isaac Lozano Osorio",
+        "year": "2025",
+        "status": "Completed",
+        "file": "competitive-programming-certificate.pdf"
+      },
+      {
+        "title": "Game Development & VR with Unity Certification",
+        "issuer": "Centro de Formación Municipal de Móstoles",
+        "year": "2021",
+        "status": "Completed",
+        "file": "DESARROLLODEVIDEOJUEGOSYREALIADVIRTUALCONUNITY3D.pdf"
+      }
+    ]
+  },
+
+                                                          "_coment2": "CV-Skills",
+
+  "skills": {
+    "title": {
+      "part1": "Technical",
+      "part2": "Skills"
+    },
+    "technical": "Programming & Development",
+    "gamedev": "Game Development Expertise",
+
+    "gamedevSkills": {
+      "gameDesign": "Game Design",
+      "levelDesign": "Level Design",
+      "uiux": "UI/UX Design",
+      "modeling": "3D Modeling",
+      "textures": "Textures",
+      "shader": "Shader Programming",
+      "patterns": "Programming Patterns",
+      "ai": "AI Programming",
+      "database": "Database",
+      "multiplayer": "Multiplayer Systems",
+      "performance": "Performance Optimization"
+    }
+  },
+
+                                                          "_coment3": "CV-Projects",
+
+  "projects": {
+    "title": "My",
+    "highlight": "Projects",
+    "subtitle": "A showcase of my game development projects, from concept to completion. Each project represents a unique challenge and learning experience.",
+    "buttons": {
+      "code": "Code",
+      "demo": "Demo"
+    },
+    "status": {
+      "Completed": "Completed",
+      "Published": "Published",
+      "In Development": "In Development",
+      "Prototype": "Prototype"
+    },
+    "items": {
+      "fragmentsOfTime": {
+        "title": "Fragments Of Time (Game Jam)",
+        "description": "The main character seeks to find the killer who murdered his daughter. To do so, he created a machine that allows him to travel to the moment of her death."
+      },
+      "fallOff": {
+        "title": "FallOff",
+        "description": "FallOff is a mobile game where you dodge obstacles to achieve the highest score possible. Built with Unity Cloud and Unity Authentication."
+      },
+      "theShopNextDoor": {
+        "title": "The Shop Next Door",
+        "description": "A two player competitive game where two sisters fight to find a good balance between life and work."
+      },
+      "decorDilema": {
+        "title": "Decor Dilema",
+        "description": "Immersive VR experience showcasing interactive environments that you can decorate according to customer orders."
+      },
+      "arkanoid": {
+        "title": "Arkanoid",
+        "description": "The classic Arkanoid video game with increasing difficulty as blocks break. Created completely in JavaScript."
+      }
+    }
+  },
+
+                                                          "_coment4": "CV-Contact",
+
+  "CVcontact": {
+    "title": {
+      "part1": "Get in ",
+      "part2": "Touch"
+    },
+    "subtitle": "Ready to collaborate on your next gaming project? Let's connect and create something amazing together!",
+    "infoTitle": "Contact Information",
+    "socialTitle": "Follow Me",
+    "formTitle": "Send a Message",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "send": "Send Message"
+    },
+    "footer": "© 2025 Néstor Bermejillo González. Built with passion for game development."
+  }
+}

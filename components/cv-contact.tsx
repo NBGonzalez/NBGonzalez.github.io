@@ -1,6 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { CheckCircle } from "lucide-react";
+
+import emailjs from 'emailjs-com';
+
+import { AnimatePresence, motion } from "framer-motion";
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from "lucide-react";
 import { FaItchIo } from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,9 +13,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 
+import { useTranslation, Trans } from "react-i18next";
+
 export default function CVContact() {
   console.log("CVContact component rendering");
-  
+  const { t } = useTranslation();
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -27,12 +36,29 @@ export default function CVContact() {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Contact form submitted:", formData);
-    // Here you would typically send the form data to a server
-    alert("Message sent! (This is a demo)");
-    setFormData({ name: '', email: '', message: '' });
-  };
+  e.preventDefault();
+  console.log("Contact form submitted:", formData);
+
+  emailjs.send(
+    'service_issb9s7',
+    'template_nzkql6k',
+    {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message
+    },
+    'rx2yTSiDO3GEE4NbH'
+  ).then(
+    () => {
+      alert("Message sent successfully!");
+      setFormData({ name: '', email: '', message: '' });
+    },
+    (error) => {
+      console.error("EmailJS error:", error);
+      alert("Failed to send message. Please try again.");
+    }
+  );
+};
 
   const contactInfo = [
     {
@@ -89,11 +115,11 @@ export default function CVContact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Get In <span className="text-neon-cyan">Touch</span>
+            {t("CVcontact.title.part1")} <span className="text-neon-cyan">{t("CVcontact.title.part2")}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-neon-cyan to-electric-purple mx-auto mb-8"></div>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Ready to collaborate on your next gaming project? Let's connect and create something amazing together!
+            {t("CVcontact.subtitle")}
           </p>
         </motion.div>
 
@@ -109,7 +135,7 @@ export default function CVContact() {
             >
               <div>
                 <h3 className="text-2xl font-bold text-white mb-6">
-                  Contact Information
+                  {t("CVcontact.infoTitle")}
                 </h3>
                 <div className="space-y-4">
                   {contactInfo.map((info, index) => (
@@ -147,7 +173,7 @@ export default function CVContact() {
               {/* Social Links */}
               <div>
                 <h3 className="text-2xl font-bold text-white mb-6">
-                  Follow Me
+                  {t("CVcontact.socialTitle")}
                 </h3>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => (
@@ -180,13 +206,13 @@ export default function CVContact() {
               <Card className="bg-black/50 border-electric-purple/20">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold text-white mb-6">
-                    Send a Message
+                    {t("CVcontact.formTitle")}
                   </h3>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <Input
                         name="name"
-                        placeholder="Your Name"
+                        placeholder={t("CVcontact.form.name")}
                         value={formData.name}
                         onChange={handleInputChange}
                         className="bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-neon-cyan"
@@ -197,7 +223,7 @@ export default function CVContact() {
                       <Input
                         name="email"
                         type="email"
-                        placeholder="Your Email"
+                        placeholder={t("CVcontact.form.email")}
                         value={formData.email}
                         onChange={handleInputChange}
                         className="bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-neon-cyan"
@@ -207,7 +233,7 @@ export default function CVContact() {
                     <div>
                       <Textarea
                         name="message"
-                        placeholder="Your Message"
+                        placeholder={t("CVcontact.form.message")}
                         value={formData.message}
                         onChange={handleInputChange}
                         rows={6}
@@ -220,7 +246,7 @@ export default function CVContact() {
                       className="w-full bg-gradient-to-r from-electric-purple to-neon-cyan hover:from-electric-purple/80 hover:to-neon-cyan/80 text-white font-semibold py-3 rounded-lg transition-all duration-300"
                     >
                       <Send className="w-5 h-5 mr-2" />
-                      Send Message
+                      {t("CVcontact.form.send")}
                     </Button>
                   </form>
                 </CardContent>
@@ -238,7 +264,7 @@ export default function CVContact() {
           className="text-center mt-16 pt-8 border-t border-gray-800"
         >
           <p className="text-gray-400">
-            © 2025 Néstor Bermejillo González. Built with passion for game development.
+            {t("CVcontact.footer")}
           </p>
         </motion.div>
       </div>
